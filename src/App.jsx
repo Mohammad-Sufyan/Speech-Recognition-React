@@ -16,17 +16,18 @@ const App = () => {
 
   const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition();
   if (!browserSupportsSpeechRecognition) {
-    return null;
+    return alert('no browsersupport');
   }
   return (
     <>
       <div className="container">
         <h2>Speech to Text</h2>
         <br />
-        <p>a React hook that converts speech from microphone to text and makes it available to your React components.</p>
+        <p>A React hook that converts speech from microphone to text and makes it available to your React components.</p>
 
+        <p>Note: To copy written text, firstly click once on the white board after clicking Stop button.</p>
         <div className="main-content" onClick={() => setTextToCopy(transcript)}>
-              {transcript}
+              { transcript}
         </div>
 
         <div className="btn-style">
